@@ -92,8 +92,10 @@ int	ft_memorise_texture(t_parsage *pars, char *lien)
 			|| (line[x] == 'E' && line[x + 1] == 'A' && line[x + 2] == ' ')
 			|| (line[x] == 'W' && line[x + 1] == 'E' && line[x + 2] == ' ')
 			|| (line[x] == 'S' && line[x + 1] == ' '))
+		{
 			if (ft_choose_texture(pars, &(line[x])) < 0)
 				 return (ft_fonction_fermeture_free(fd, line, -1));
+		}
 		free(line);
 	}
 	return (ft_fonction_fermeture_free(fd, line, 4));
