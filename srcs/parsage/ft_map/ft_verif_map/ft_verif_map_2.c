@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_copie_map_2.c                                   :+:      :+:    :+:   */
+/*   ft_verif_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <webbonnet@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,53 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/cub3d.h"
+#include "../../../../includes/cub3d.h"
 
-int	ft_free(t_parsage *pars, int x, int taille)
+int	ft_bloker(int y, int x, t_parsage *pars)
 {
-	free(&(pars->map[taille]));
-	while (x >= 0)
-		free(&(pars->map[--x]));
-	free(pars->map);
-	return (-1);
-}
-
-int	ft_verif_nb(int fd)
-{
-	char	*line;
-	int		test;
-
-	line = NULL;
-	test = get_next_line(fd, &line);
-	while (test >= 0)
-	{
-		if (ft_verif_line(line, "012 NSEW") == 1)
-		{
-			free(line);
-			return (-1);
-		}
-		else if (test == 0)
-			break ;
-		free(line);
-		test = get_next_line(fd, &line);
-	}
-	free(line);
-	return (1);
-}
-
-int	ft_copie_line(char *map, char *line)
-{
-	int	x;
-
-	x = 0;
-	while (line[x] != '\0')
-	{
-		if (line[x] == ' ')
-			map[x] = '1';
-		else
-			map[x] = line[x];
-		x++;
-	}
-	map[x] = '\0';
+	if (y == 0 || x == 0)
+		return (0);
+	if (pars->info_map[y + 1].x <= x || pars->info_map[y - 1].x <= x)
+		return (0);
+	if (ft_verif_cara("102NSEWXx", pars->map[y][x - 1]) == -1
+	|| ft_verif_cara("102NSEWXx", pars->map[y][x + 1]) == -1
+	|| ft_verif_cara("102NSEWXx", pars->map[y - 1][x]) == -1
+	|| ft_verif_cara("102NSEWXx", pars->map[y + 1][x]) == -1)
+		return (0);
 	return (1);
 }

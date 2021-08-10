@@ -53,10 +53,9 @@ int	ft_memorise_ciel_terre(t_parsage *pars, char *lien, char para, int choose)
 	return (ft_fonction_fermeture_free(fd, line, res));
 }
 
-int	ft_protocole_verif_format(char *line, int fd, int *x)
+int	ft_protocole_verif_format(char *line, int *x)
 {
-	int	y; 
-	(void)fd;
+	int	y;
 
 	(*x)++;
 	y = 0;
@@ -92,11 +91,11 @@ int	ft_verif_format(char *lien, char para)
 		while (line[x] == ' ')
 			x++;
 		if (line[x] == para)
-			y = ft_protocole_verif_format(line, fd, &x);
+			y = ft_protocole_verif_format(line, &x);
 		if (y < 0)
 			return (ft_fonction_fermeture_free(fd, line, -1));
-		else 
-				free(line);
+		else
+			free(line);
 	}
 	return (ft_fonction_fermeture_free(fd, line, 1));
 }

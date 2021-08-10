@@ -26,7 +26,7 @@ int	ft_verif_cara(char *str, char cara)
 	return (-1);
 }
 
-int	ft_verif_line(char *line, char *str) 
+int	ft_verif_line(char *line, char *str)
 {
 	int	x;
 

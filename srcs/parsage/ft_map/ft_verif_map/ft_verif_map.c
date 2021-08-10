@@ -12,20 +12,6 @@
 
 #include "../../../../includes/cub3d.h"
 
-int	ft_bloker(int y, int x, t_parsage *pars)
-{
-	if (y == 0 || x == 0)
-		return (0);
-	if (pars->info_map[y + 1].x <= x || pars->info_map[y - 1].x <= x)
-		return (0);
-	if (ft_verif_cara("102NSEWXx", pars->map[y][x - 1]) == -1
-	|| ft_verif_cara("102NSEWXx", pars->map[y][x + 1]) == -1
-	|| ft_verif_cara("102NSEWXx", pars->map[y - 1][x]) == -1
-	|| ft_verif_cara("102NSEWXx", pars->map[y + 1][x]) == -1)
-		return (0);
-	return (1);
-}
-
 int	ft_remplie_valeur(t_parsage *pars, t_tmp *test, int option, t_tmp2 *a)
 {
 	int	option2;
@@ -60,16 +46,20 @@ int	ft_choose_case(t_parsage *pars, t_tmp *test)
 	test->a2.x = -1;
 	test->a3.x = -1;
 	test->a4.x = -1;
-	if (pars->map[test->y][test->x + 1] == '0' || pars->map[test->y][test->x + 1] == '2')
+	if (pars->map[test->y][test->x + 1] == '0'
+		|| pars->map[test->y][test->x + 1] == '2')
 		if (ft_remplie_valeur(pars, test, 1, &(test->a1)) == -1)
 			return (-1);
-	if (pars->map[test->y][test->x - 1] == '0' || pars->map[test->y][test->x - 1] == '2')
+	if (pars->map[test->y][test->x - 1] == '0'
+		|| pars->map[test->y][test->x - 1] == '2')
 		if (ft_remplie_valeur(pars, test, -1, &(test->a2)) == -1)
 			return (-1);
-	if (pars->map[test->y + 1][test->x] == '0' || pars->map[test->y + 1][test->x] == '2')
+	if (pars->map[test->y + 1][test->x] == '0'
+		|| pars->map[test->y + 1][test->x] == '2')
 		if (ft_remplie_valeur(pars, test, 2, &(test->a3)) == -1)
 			return (-1);
-	if (pars->map[test->y - 1][test->x] == '0' || pars->map[test->y - 1][test->x] == '2')
+	if (pars->map[test->y - 1][test->x] == '0'
+		|| pars->map[test->y - 1][test->x] == '2')
 		if (ft_remplie_valeur(pars, test, -2, &(test->a4)) == -1)
 			return (-1);
 	return (1);
@@ -96,10 +86,10 @@ int	ft_test(t_parsage *pars, t_tmp test, int *res)
 	return (1);
 }
 
-int		ft_recupe_info_map(t_parsage *pars, t_verif **info_map)
+int	ft_recupe_info_map(t_parsage *pars, t_verif **info_map)
 {
-	int nb;
-	int x;
+	int	nb;
+	int	x;
 
 	nb = 0;
 	while (pars->map[nb][0] != '\0')
@@ -117,10 +107,9 @@ int		ft_recupe_info_map(t_parsage *pars, t_verif **info_map)
 		(*info_map)[nb].y = nb;
 		(*info_map)[nb].x = x;
 		nb++;
-	}  
+	}
 	return (1);
 }
-
 
 int	ft_init_test_map(t_parsage *pars)
 {

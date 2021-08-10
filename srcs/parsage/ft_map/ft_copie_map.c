@@ -62,20 +62,19 @@ int	ft_trouve_map(int fd)
 {
 	char	*line;
 	int		x;
-	int test;
 
 	x = 1;
 	line = NULL;
 	while (get_next_line(fd, &line) > 0 && ft_verif_line(line, "012 NSEW") != 1)
 		free(line);
-	while ((test = ft_verif_line(line, "012 NSEW")) == 1)
+	while (ft_verif_line(line, "012 NSEW") == 1)
 	{
 		x++;
 		free(line);
 		if (get_next_line(fd, &line) <= 0)
 			break ;
 	}
-	free(line); 
+	free(line);
 	if (ft_verif_nb(fd) == -1)
 		return (-1);
 	return (x);
@@ -102,7 +101,7 @@ int	ft_recup_map(t_parsage *pars)
 
 	w = 0;
 	fd = open(pars->lien, O_RDONLY);
-	res = ft_trouve_map(fd); 
+	res = ft_trouve_map(fd);
 	if (res < 3)
 		return (-1);
 	close(fd);

@@ -14,7 +14,7 @@
 
 int	ft_suite(t_parsage *pars, int ac, char **av)
 {
-	int x;
+	int	x;
 
 	if (ac == 2)
 		x = ft_lance_parsage(pars, av[1]);

@@ -54,7 +54,7 @@ int	ft_lance_parsage(t_parsage *pars, char *lien)
 	if (ft_init_recup_ciel_terre(pars, lien) < 0)
 		return (ft_erreur(": (procédure ft_init_recup_ciel_terre)\n\n", -1));
 	if (ft_init_verif_texture(lien) < 0)
-		return (ft_erreur("(procédure ft_init_verif_texture)\n\n", -1)); 
+		return (ft_erreur("(procédure ft_init_verif_texture)\n\n", -1));
 	if (ft_memorise_texture(pars, lien) < 0)
 		return (ft_erreur("(procédure ft_memorise_texture)\n\n", -1));
 	if (ft_verif_dernier_line_info_cub(lien) < 0)

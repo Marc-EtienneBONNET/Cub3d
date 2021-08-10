@@ -27,6 +27,7 @@ SRCS			= 	main/ft_main.c\
 				parsage/ft_lancement/ft_lancement_parsage.c\
 				parsage/ft_map/ft_verif_map/ft_netoyage_map_init_perso.c\
 				parsage/ft_map/ft_verif_map/ft_verif_map.c\
+				parsage/ft_map/ft_verif_map/ft_verif_map_2.c\
 				parsage/ft_map/ft_copie_map_2.c\
 				parsage/ft_map/ft_copie_map.c\
 				parsage/ft_obj/ft_init_obj.c\

@@ -61,7 +61,7 @@ int	ft_verif_format_texture(char *lien, char *para)
 		while (line[x] == ' ')
 			x++;
 		if (line[x] == para[0] && line[x + 1] == para[1])
-			ft_protocole_verif_format_1(line, &x, &verif); 
+			ft_protocole_verif_format_1(line, &x, &verif);
 		free(line);
 	}
 	return (ft_fonction_fermeture_free(fd, line, verif));

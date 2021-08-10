@@ -13,7 +13,7 @@
 #include "../../includes/cub3d.h"
 
 void	ft_close_vm(t_parsage *pars)
-{ 
+{
 	if (pars->mlx.window != NULL && pars->mlx.mlx != NULL)
 	{
 		mlx_clear_window(pars->mlx.mlx, pars->mlx.window);
@@ -21,6 +21,8 @@ void	ft_close_vm(t_parsage *pars)
 		mlx_destroy_window(pars->mlx.mlx, pars->mlx.window);
 		free(pars->mlx.mlx);
 	}
+	if (pars->info_cub != NULL)
+		free(pars->info_cub);
 }
 
 int	ft_close_programe(t_parsage *pars, int choose)
