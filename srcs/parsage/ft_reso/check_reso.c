@@ -106,5 +106,7 @@ int	ft_init_recup_reso(t_parsage *pars, char *lien)
 		return (-2);
 	if (ft_memorise_nb_reso(pars, lien) < 0)
 		return (-3);
+	if (pars->reso.x <= 0 || pars->reso.y <= 0)
+		return (-4);
 	return (1);
 }
