@@ -22,6 +22,23 @@ void	ft_procedure_verif_para(int *conteur, char *line, char para)
 	if (line[x] == para)
 		*conteur += 1;
 }
+int	ft_verif_enti_dossier(char *lien)
+{
+	char *line;
+	int		fd;
+
+	fd = open(lien, O_RDONLY);
+	line = NULL;
+	if (get_next_line(fd, &line) == -1)
+	{
+		close(fd);
+		free(line);
+		return (-1);
+	}
+	free(line);
+	close(fd);
+	return (1);
+}
 
 int	ft_verif_nb_para(char *lien, char para)
 {
@@ -30,6 +47,8 @@ int	ft_verif_nb_para(char *lien, char para)
 	int		conteur;
 
 	conteur = 0;
+	if (ft_verif_enti_dossier(lien) == -1)
+		return (-1);
 	line = NULL;
 	fd = open(lien, O_RDONLY);
 	while (get_next_line(fd, &line) > 0)

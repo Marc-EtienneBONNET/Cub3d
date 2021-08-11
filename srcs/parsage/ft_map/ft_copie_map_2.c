@@ -33,7 +33,6 @@ int	ft_verif_nb(int fd)
 		if (ft_verif_line(line, "012 NSEW") == 1)
 		{
 			free(line);
-			free(line);
 			return (-1);
 		}
 		else if (test == 0)

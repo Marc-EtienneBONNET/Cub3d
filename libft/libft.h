@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 2
 # define MIN -2147483648
 # define MAX 2147483647
 
@@ -25,12 +25,16 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-int				ft_strlen2(const char *s);
-char			*ft_strsub2(char const *s, unsigned int start, size_t len);
-char			*ft_strjoin2(char *s1, char *s2, int descriptor);
-char			*ft_strchr2(const char *str, int c);
-char			*ft_strnew2(size_t size);
+
+
+
 int				get_next_line(int fd, char **line);
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strchr(const char *s, int c);
+size_t			ft_strlen_2(const char *s);
+char			*ft_alloc(size_t size);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strcpy(char *dest, char *src);
 int				ft_putstr(char *str);
 char			*ft_strdup(char *src);
 int				ft_strlen(char *str);

@@ -1,20 +1,21 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: macbook <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/13 17:06:42 by macbook           #+#    #+#             */
-/*   Updated: 2021/02/25 15:24:27 by mbonnet          ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   get_next_line_utils.c                            .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/12/02 21:49:14 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/12/17 21:10:00 by mojacque    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen2(const char *s)
+size_t	ft_strlen_2(const char *s)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -22,77 +23,74 @@ int	ft_strlen2(const char *s)
 	return (i);
 }
 
-char	*ft_strsub2(char const *s, unsigned int start, size_t len)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*s2;
+	char	*str;
+
+	str = (char *)s;
+	while (*str != c)
+	{
+		if (*str == '\0')
+			return (NULL);
+		str++;
+	}
+	return (str);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
 	size_t	i;
+	size_t	j;
+	char	*dest;
+
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	dest = malloc(sizeof(char) * (ft_strlen_2(s1) + ft_strlen_2(s2) + 1));
+	if (dest == NULL)
+		return (NULL);
+	i = -1;
+	while (s1[++i] != '\0')
+		dest[i] = s1[i];
+	j = 0;
+	while (s2[j] != '\0')
+		dest[i++] = s2[j++];
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	size_t i;
 
 	i = 0;
-	if (s == NULL)
-		return (0);
-	s2 = (char *)malloc(sizeof(char) * (len + 1));
-	if (s2 == NULL)
-		return (NULL);
-	while (i < len && s[start])
+	while (src[i] != '\0')
 	{
-		s2[i] = s[start++];
+		dest[i] = src[i];
 		i++;
 	}
-	s2[i] = '\0';
-	return (s2);
+	dest[i] = '\0';
+	return (dest);
 }
 
-char	*ft_strjoin2(char *s1, char *s2, int descriptor)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*res;
-	unsigned int	x;
-	unsigned int	i;
-
-	i = -1;
-	x = -1;
-	s2[descriptor] = '\0';
-	if (!s1 || !s2)
-		return (0);
-	res = (char *)malloc(sizeof(char) * ((ft_strlen2((char *)s1)
-					+ ft_strlen2((char *)s2) + 1)));
-	if (!(res))
-		return (NULL);
-	while (s1[++x])
-		res[x] = s1[x];
-	while (s2[++i])
-		res[x + i] = s2[i];
-	res[x + i] = '\0';
-	free(s1);
-	return (res);
-}
-
-char	*ft_strchr2(const char *str, int c)
-{
-	int	x;
-
-	x = 0;
-	while (str[x])
-	{
-		if (str[x] == c)
-			return ((char *)str + x);
-		x++;
-	}
-	if (str[x] == c)
-		return ((char *)str + x);
-	return (NULL);
-}
-
-char	*ft_strnew2(size_t size)
-{
-	char	*s;
 	size_t	i;
+	char	*dest;
 
-	i = 0;
-	s = (char *)malloc(size + 1);
 	if (s == NULL)
 		return (NULL);
-	while (i < size)
-		s[i++] = 0;
-	s[size] = '\0';
-	return (s);
+	dest = malloc(sizeof(char) * (len + 1));
+	if (dest == NULL)
+		return (NULL);
+	i = 0;
+	if (!(start > ft_strlen_2(s)))
+	{
+		while (i < len && s[i + start])
+		{
+			dest[i] = s[i + start];
+			i++;
+		}
+	}
+	dest[i] = '\0';
+	return (dest);
 }

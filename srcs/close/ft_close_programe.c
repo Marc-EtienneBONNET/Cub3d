@@ -51,6 +51,6 @@ int	ft_close_programe(t_parsage *pars, int choose)
 		mlx_destroy_display(pars->mlx.mlx);
 		free(pars->mlx.mlx);
 	}
-	exit(0);
+	exit (0);
 	return (1);
 }
