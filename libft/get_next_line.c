@@ -53,31 +53,6 @@ static char	*ft_save(char *lines, size_t *a)
 	return (NULL);
 }
 
-int	get_next_line_2(char **lines, char *buf, int end_buff)
-{
-	char			*line_tmp;
-	if (end_buff <= 0)
-			return (-1);
-	buf[end_buff] = '\0';
-	line_tmp = *lines;
-	*lines = ft_strjoin(line_tmp, buf);
-	free(line_tmp);
-	return (1);
-}
-
-int	get_next_line_3(char **lines)
-{
-	if (*lines == NULL)
-	{
-		*lines = ft_alloc(0);
-		if (*lines == NULL)
-			return (-1);
-	}
-	return (1);
-}
-
-
-
 int	get_next_line(int fd, char **line)
 {
 	static char		buf[BUFFER_SIZE + 1];
@@ -89,7 +64,7 @@ int	get_next_line(int fd, char **line)
 	if (fd < 0 || BUFFER_SIZE < 1 || line == NULL || read(fd, buf, 0) < 0)
 		return (-1);
 	if (get_next_line_3(&lines) == -1)
-			return (-1);
+		return (-1);
 	while (ft_strchr(lines, '\n') == NULL)
 	{
 		end_buff = read(fd, buf, BUFFER_SIZE);

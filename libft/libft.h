@@ -26,9 +26,9 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+int				get_next_line_2(char **lines, char *buf, int end_buff);
+int				get_next_line_3(char **lines);
 int				get_next_line(int fd, char **line);
-int				ft_get_next_line_2(char **lines, char *buf, int end_buff);
-int				ft_lines(char **lines);
 char			*ft_strjoin_2(char const *s1, char const *s2);
 char			*ft_strchr(const char *s, int c);
 size_t			ft_strlen_2(const char *s);
