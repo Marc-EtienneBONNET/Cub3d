@@ -22,6 +22,12 @@ void	ft_close_vm(t_parsage *pars)
 	}
 	if (pars->info_map != NULL)
 		free(pars->info_map);
+	if (pars->mlx.mlx)
+	{
+		mlx_loop_end(pars->mlx.mlx);
+		mlx_destroy_display(pars->mlx.mlx);
+		free(pars->mlx.mlx);
+	}
 }
 
 int	ft_close_programe(t_parsage *pars, int choose)
@@ -45,12 +51,6 @@ int	ft_close_programe(t_parsage *pars, int choose)
 	while (pars->lst_texture[x].img_ptr != NULL)
 		mlx_destroy_image(pars->mlx.mlx, pars->lst_texture[x++].img_ptr);
 	ft_close_vm(pars);
-	if (pars->mlx.mlx)
-	{
-		mlx_loop_end(pars->mlx.mlx);
-		mlx_destroy_display(pars->mlx.mlx);
-		free(pars->mlx.mlx);
-	}
 	exit (0);
 	return (1);
 }

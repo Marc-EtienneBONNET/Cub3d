@@ -75,7 +75,7 @@ int	ft_trouve_map(int fd)
 			break ;
 	}
 	free(line);
-	if (ft_verif_nb(fd) == -1) 
+	if (ft_verif_nb(fd) == -1)
 		return (-1);
 	return (x);
 }
@@ -104,7 +104,7 @@ int	ft_recup_map(t_parsage *pars)
 	res = ft_trouve_map(fd);
 	close(fd);
 	if (res < 3)
-		return (-1); 
+		return (-1);
 	fd = open(pars->lien, O_RDONLY);
 	ft_init_map(pars, res, fd, &w);
 	close(fd);

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                  :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonnet <webbonnet@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -53,28 +53,15 @@ static char	*ft_save(char *lines, size_t *a)
 	return (NULL);
 }
 
-void	ft_protocol_get_next_line(int fd,int *end_buff, char *lines, char *buf)
-{
-		char			*line_tmp;
-
-		line_tmp = NULL;
-		buf[*end_buff] = '\0';
-		line_tmp = lines;
-		lines = ft_strjoin_2(line_tmp, buf);
-		*end_buff = read(fd, buf, BUFFER_SIZE);
-}
-
-
-
-
 int	get_next_line(int fd, char **line)
 {
-		static char		buf[BUFFER_SIZE + 1];
-	static char		*lines = NULL;
-	int				end_buff;
-	size_t			a;
+	static char	buf[BUFFER_SIZE + 1];
+	static char	*lines;
+	int			end_buff;
+	size_t		a;
 
 	a = 1;
+	line = NULL;
 	if (fd < 0 || BUFFER_SIZE < 1 || line == NULL || read(fd, buf, 0) < 0)
 		return (-1);
 	if (ft_lines(&lines) == -1)
@@ -82,7 +69,7 @@ int	get_next_line(int fd, char **line)
 	while (ft_strchr(lines, '\n') == NULL)
 	{
 		end_buff = read(fd, buf, BUFFER_SIZE);
-		if (ft_get_next_line_2(&lines,buf,end_buff) == -1)
+		if (ft_get_next_line_2(&lines, buf, end_buff) == -1)
 			break ;
 	}
 	*line = ft_substr(lines, 0, ft_bufflen(lines));

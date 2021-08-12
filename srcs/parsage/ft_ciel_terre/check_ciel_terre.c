@@ -26,7 +26,7 @@ int	ft_protocole_recup_ciel_terre(char *line, char para, int *res)
 		if ((rgb[0] < 0 || rgb[0] > 255)
 			|| (rgb[1] < 0 || rgb[1] > 255)
 			|| (rgb[2] < 0 || rgb[2] > 255))
-					return (-1);
+			return (-1);
 		*res = (0 << 24 | rgb[0] << 16 | rgb[1] << 8 | rgb[2]);
 	}
 	return (1);

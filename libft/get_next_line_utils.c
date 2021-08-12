@@ -1,21 +1,20 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   get_next_line.c                                  .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*    By: mbonnet <webbonnet@gmail.com>             +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2020/12/02 21:49:09 by mbonnet      #+#   ##    ##    #+#       */
-/*   Updated: 2020/12/20 17:19:28 by mbonnet     ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbonnet <webbonnet@gmail.com>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/17 15:38:34 by mbonnet           #+#    #+#             */
+/*   Updated: 2020/11/26 12:32:37 by mbonnet          ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 size_t	ft_strlen_2(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -60,7 +59,7 @@ char	*ft_strjoin_2(char const *s1, char const *s2)
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (src[i] != '\0')

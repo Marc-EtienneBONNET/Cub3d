@@ -22,9 +22,10 @@ void	ft_procedure_verif_para(int *conteur, char *line, char para)
 	if (line[x] == para)
 		*conteur += 1;
 }
+
 int	ft_verif_enti_dossier(char *lien)
 {
-	char *line;
+	char	*line;
 	int		fd;
 
 	fd = open(lien, O_RDONLY);

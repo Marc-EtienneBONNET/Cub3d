@@ -17,7 +17,7 @@ int	ft_get_next_line_2(char **lines, char *buf, int end_buff)
 	char			*line_tmp;
 
 	if (end_buff <= 0)
-			return (-1);
+		return (-1);
 	buf[end_buff] = '\0';
 	line_tmp = NULL;
 	line_tmp = *lines;
