@@ -1,8 +1,8 @@
 R 640 480
-NO ./images/NO.xpm
-SO ./images/SO.xpm
-EA ./images/EA.xpm
-S ./images/ITEM.xpm
+SO ./texture/texture_2.xpm
+NO ./texture/texture_1.xpm
+EA ./texture/texture_3.xpm
+S  ./texture/texture_obj.xpm
 F 00,153,15
 C 255,255,255
 

@@ -25,23 +25,22 @@ int	ft_verif_nb(int fd)
 {
 	char	*line;
 	int		test;
+	int		res;
 
+	res = 1;
 	line = NULL;
 	test = get_next_line(fd, &line);
 	while (test >= 0)
 	{
 		if (ft_verif_line(line, "012 NSEW") == 1)
-		{
-			free(line);
-			return (-1);
-		}
+			res = -1;
 		else if (test == 0)
 			break ;
 		free(line);
 		test = get_next_line(fd, &line);
 	}
 	free(line);
-	return (1);
+	return (res);
 }
 
 int	ft_copie_line(char *map, char *line)

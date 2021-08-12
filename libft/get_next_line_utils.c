@@ -37,7 +37,7 @@ char	*ft_strchr(const char *s, int c)
 	return (str);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_2(char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	j;

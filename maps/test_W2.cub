@@ -1,5 +1,5 @@
 R 640 480
-NO ./images/NO.xpm
+SO ./texture/texture_2.xpm
 SO ./texture/texture_2.xpm
 NO ./texture/texture_1.xpm
 EA ./texture/texture_3.xpm

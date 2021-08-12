@@ -26,7 +26,7 @@ int	ft_protocole_recup_ciel_terre(char *line, char para, int *res)
 		if ((rgb[0] < 0 || rgb[0] > 255)
 			|| (rgb[1] < 0 || rgb[1] > 255)
 			|| (rgb[2] < 0 || rgb[2] > 255))
-			return (-1);
+					return (-1);
 		*res = (0 << 24 | rgb[0] << 16 | rgb[1] << 8 | rgb[2]);
 	}
 	return (1);
@@ -43,7 +43,7 @@ int	ft_memorise_ciel_terre(t_parsage *pars, char *lien, char para, int choose)
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (ft_protocole_recup_ciel_terre(line, para, &res) == -1)
-			return (ft_fonction_fermeture_free(fd, line, -1));
+			res = -1;
 		free(line);
 	}
 	if (choose == 1)

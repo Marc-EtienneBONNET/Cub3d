@@ -4,7 +4,7 @@ NO ./texture/texture_1.xpm
 EA ./texture/texture_3.xpm
 WE ./texture/texture_4.xpm
 S  ./texture/texture_obj.xpm
-S ./images/ITEM.xpm
+S ./texture/texture_obj.xpm
 F 00,153,15
 C 255,255,255
 

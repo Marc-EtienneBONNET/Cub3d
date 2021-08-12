@@ -78,7 +78,9 @@ int	ft_memorise_texture(t_parsage *pars, char *lien)
 	int		fd;
 	char	*line;
 	int		x;
+	int		res;
 
+	res = 4;
 	line = NULL;
 	fd = open(lien, O_RDONLY);
 	ft_init_mlx(pars);
@@ -94,9 +96,9 @@ int	ft_memorise_texture(t_parsage *pars, char *lien)
 			|| (line[x] == 'S' && line[x + 1] == ' '))
 		{
 			if (ft_choose_texture(pars, &(line[x])) < 0)
-				 return (ft_fonction_fermeture_free(fd, line, -1));
+				res = -1;
 		}
 		free(line);
 	}
-	return (ft_fonction_fermeture_free(fd, line, 4));
+	return (ft_fonction_fermeture_free(fd, line, res));
 }

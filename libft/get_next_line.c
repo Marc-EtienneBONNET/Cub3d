@@ -72,7 +72,7 @@ int				get_next_line(int fd, char **line)
 	{
 		buf[end_buff] = '\0';
 		line_tmp = lines;
-		lines = ft_strjoin(line_tmp, buf);
+		lines = ft_strjoin_2(line_tmp, buf);
 		free(line_tmp);
 	}
 	*line = ft_substr(lines, 0, ft_bufflen(lines));
