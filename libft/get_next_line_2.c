@@ -15,15 +15,17 @@
 int	ft_get_next_line_2(char **lines, char *buf, int end_buff)
 {
 	char			*line_tmp;
-
+	
 	if (end_buff <= 0)
 		return (-1);
 	buf[end_buff] = '\0';
+	printf("%d",end_buff);
 	line_tmp = NULL;
 	line_tmp = *lines;
 	*lines = ft_strjoin_2(line_tmp, buf);
 	free(line_tmp);
 	return (1);
+	
 }
 
 int	ft_lines(char **lines)

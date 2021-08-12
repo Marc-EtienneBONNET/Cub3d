@@ -52,6 +52,7 @@ int	ft_verif_nb_para(char *lien, char para)
 		return (-1);
 	line = NULL;
 	fd = open(lien, O_RDONLY);
+
 	while (get_next_line(fd, &line) > 0)
 	{
 		ft_procedure_verif_para(&conteur, line, para);

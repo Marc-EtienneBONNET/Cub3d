@@ -81,6 +81,7 @@ clean			:
 fclean			:	clean
 					make fclean -C ${LIBFT_DIR}
 					rm -rf ${NAME}
+					rm -rf save.bmp
 
 re				:	fclean all
 
