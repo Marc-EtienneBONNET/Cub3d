@@ -30,7 +30,7 @@ void	ft_close_vm(t_parsage *pars)
 	}
 }
 
-int	ft_close_programe(t_parsage *pars, int choose)
+int	ft_close_programe(t_parsage *pars)
 {
 	int	x;
 	int	y;
@@ -46,8 +46,7 @@ int	ft_close_programe(t_parsage *pars, int choose)
 		free(pars->map[y++]);
 		free(pars->map);
 	}
-	if (choose == -2)
-		free(pars->obj);
+	free(pars->obj);
 	while (pars->lst_texture[x].img_ptr != NULL)
 		mlx_destroy_image(pars->mlx.mlx, pars->lst_texture[x++].img_ptr);
 	ft_close_vm(pars);

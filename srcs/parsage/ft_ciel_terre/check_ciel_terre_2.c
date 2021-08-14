@@ -76,7 +76,7 @@ int	ft_verif_nb_nombre(char *lien, char para)
 	return (ft_fonction_fermeture_free(fd, line, 1));
 }
 
-int	ft_verif_cara_C_F(char *lien, char para)
+int	ft_verif_cara_c_f(char *lien, char para)
 {
 	int		fd;
 	char	*line;

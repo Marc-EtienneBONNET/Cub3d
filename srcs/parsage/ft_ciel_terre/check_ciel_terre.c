@@ -104,7 +104,7 @@ int	ft_init_recup_ciel_terre(t_parsage *pars, char *lien)
 {
 	if (ft_verif_nb_para(lien, 'C') < 0 || ft_verif_nb_para(lien, 'F') < 0)
 		return (-1);
-	if (ft_verif_cara_C_F(lien, 'C') < 0 || ft_verif_cara_C_F(lien, 'F') < 0)
+	if (ft_verif_cara_c_f(lien, 'C') < 0 || ft_verif_cara_c_f(lien, 'F') < 0)
 		return (-2);
 	if (ft_verif_format(lien, 'C') < 0 || ft_verif_format(lien, 'F') < 0)
 		return (-3);

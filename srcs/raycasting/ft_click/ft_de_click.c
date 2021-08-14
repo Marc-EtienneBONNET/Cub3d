@@ -27,7 +27,7 @@ int	ft_clik(int key, t_parsage *pars)
 	if (key == 97)
 		pars->mouv.droite = 1;
 	if (key == 65307)
-		ft_close_programe(pars, -2);
+		ft_close_programe(pars);
 	return (1);
 }
 

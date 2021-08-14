@@ -65,7 +65,7 @@ int	ft_mouv_raycasting(t_parsage *pars, t_search_cub *search)
 	if (pars->mouv.droite == 1)
 		ft_calcule_vecteur_mouv(pars, pars->ray.gauche);
 	if (pars->mouv.sup == 53)
-		ft_close_programe(pars, -2);
+		ft_close_programe(pars);
 	ft_ajust_ray(&(pars->ray.avant));
 	ft_init_autre_ray(pars);
 	search->perso = pars->perso;

@@ -27,7 +27,9 @@ int	ft_verif_nb_para_texture(char *lien, char *para)
 		x = 0;
 		while (line[x] == ' ')
 			x++;
-		if (line[x] == para[0] && line[x + 1] == para[1])
+		if ((line[x] == para[0] && line[x + 1] == para[1] && !(para[2])) 
+			|| (para[2] && line[x] == para[0] && line[x + 1] == para[1] 
+			&& line[x + 2] == para[2]))
 			conteur++;
 		free(line);
 	}
