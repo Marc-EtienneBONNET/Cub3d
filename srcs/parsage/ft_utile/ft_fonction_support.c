@@ -28,7 +28,7 @@ int	ft_verif_enti_dossier(char *lien)
 	char	*line;
 	int		fd;
 
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY | __O_NOFOLLOW, S_IRUSR);
 	line = NULL;
 	if (get_next_line(fd, &line) == -1)
 	{
@@ -51,7 +51,7 @@ int	ft_verif_nb_para(char *lien, char para)
 	if (ft_verif_enti_dossier(lien) == -1)
 		return (-1);
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
 		ft_procedure_verif_para(&conteur, line, para);

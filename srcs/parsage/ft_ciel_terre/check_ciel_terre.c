@@ -39,7 +39,7 @@ int	ft_memorise_ciel_terre(t_parsage *pars, char *lien, char para, int choose)
 	int		res;
 
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (ft_protocole_recup_ciel_terre(line, para, &res) == -1)
@@ -83,7 +83,7 @@ int	ft_verif_format(char *lien, char para)
 	int		y;
 
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
 		x = 0;

@@ -21,7 +21,7 @@ int	ft_verif_nb_para_texture(char *lien, char *para)
 
 	conteur = 0;
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
 		x = 0;
@@ -56,7 +56,7 @@ int	ft_verif_format_texture(char *lien, char *para)
 
 	verif = -1;
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
 		x = 0;

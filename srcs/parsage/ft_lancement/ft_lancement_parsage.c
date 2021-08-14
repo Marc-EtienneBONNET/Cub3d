@@ -26,7 +26,7 @@ int	ft_verif_lien_info_cub(char *lien, t_parsage *pars)
 	if (lien[x] == 'b' && lien[x - 1] == 'u' && lien[x - 2] == 'c'
 		&& lien[x - 3] == '.')
 	{
-		fd = open(lien, O_RDONLY);
+		fd = open(lien, O_RDONLY, S_IRUSR);
 		if (fd <= 0)
 		{
 			close(fd);

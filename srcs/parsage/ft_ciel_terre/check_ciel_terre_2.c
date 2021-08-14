@@ -65,7 +65,7 @@ int	ft_verif_nb_nombre(char *lien, char para)
 
 	conteur = 0;
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
 		ft_protocole_compte_nb(line, &conteur, para);
@@ -85,7 +85,7 @@ int	ft_verif_cara_c_f(char *lien, char para)
 
 	verif = 1;
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
 		x = 0;

@@ -82,7 +82,7 @@ int	ft_memorise_texture(t_parsage *pars, char *lien)
 
 	res = 4;
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	ft_init_mlx(pars);
 	while (get_next_line(fd, &line) > 0)
 	{

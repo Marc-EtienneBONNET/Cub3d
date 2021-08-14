@@ -49,7 +49,7 @@ int	ft_verif_nombre(char *lien)
 
 	conteur = 0;
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (ft_protocole_verif_nombre(line, &conteur) == -1)
@@ -89,7 +89,7 @@ int	ft_memorise_nb_reso(t_parsage *pars, char *lien)
 	char	*line;
 
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
 		ft_protocole_memorise(line, pars);

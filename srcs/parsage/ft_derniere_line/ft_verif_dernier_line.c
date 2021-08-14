@@ -50,7 +50,7 @@ int	ft_verif_dernier_line_info_cub(char *lien)
 	int		test;
 
 	line = NULL;
-	fd = open(lien, O_RDONLY);
+	fd = open(lien, O_RDONLY, S_IRUSR);
 	x = get_next_line(fd, &line);
 	test = ft_verif_line(line, "012NSEW ");
 	while (x > 0 && (test == -1 || test == 2))
