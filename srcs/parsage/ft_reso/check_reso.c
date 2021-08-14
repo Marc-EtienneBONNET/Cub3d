@@ -60,8 +60,8 @@ int	ft_verif_nombre(char *lien)
 		free(line);
 	}
 	if (conteur != 2)
-		return (ft_fonction_fermeture_free(fd, line, -1));
-	return (ft_fonction_fermeture_free(fd, line, 1));
+		return (ft_fonction_fermeture_free(fd, &line, -1));
+	return (ft_fonction_fermeture_free(fd, &line, 1));
 }
 
 void	ft_protocole_memorise(char *line, t_parsage *pars)
@@ -95,7 +95,7 @@ int	ft_memorise_nb_reso(t_parsage *pars, char *lien)
 		ft_protocole_memorise(line, pars);
 		free(line);
 	}
-	return (ft_fonction_fermeture_free(fd, line, 1));
+	return (ft_fonction_fermeture_free(fd, &line, 1));
 }
 
 int	ft_init_recup_reso(t_parsage *pars, char *lien)

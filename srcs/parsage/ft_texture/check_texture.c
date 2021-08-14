@@ -34,8 +34,8 @@ int	ft_verif_nb_para_texture(char *lien, char *para)
 		free(line);
 	}
 	if (conteur != 1)
-		return (ft_fonction_fermeture_free(fd, line, -1));
-	return (ft_fonction_fermeture_free(fd, line, 1));
+		return (ft_fonction_fermeture_free(fd, &line, -1));
+	return (ft_fonction_fermeture_free(fd, &line, 1));
 }
 
 void	ft_protocole_verif_format_1(char *line, int *x, int *verif)
@@ -66,7 +66,7 @@ int	ft_verif_format_texture(char *lien, char *para)
 			ft_protocole_verif_format_1(line, &x, &verif);
 		free(line);
 	}
-	return (ft_fonction_fermeture_free(fd, line, verif));
+	return (ft_fonction_fermeture_free(fd, &line, verif));
 }
 
 int	ft_init_verif_texture(char *lien)

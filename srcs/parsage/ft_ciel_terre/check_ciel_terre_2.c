@@ -72,8 +72,8 @@ int	ft_verif_nb_nombre(char *lien, char para)
 		free(line);
 	}
 	if (conteur != 3)
-		return (ft_fonction_fermeture_free(fd, line, -1));
-	return (ft_fonction_fermeture_free(fd, line, 1));
+		return (ft_fonction_fermeture_free(fd, &line, -1));
+	return (ft_fonction_fermeture_free(fd, &line, 1));
 }
 
 int	ft_verif_cara_c_f(char *lien, char para)
@@ -98,5 +98,5 @@ int	ft_verif_cara_c_f(char *lien, char para)
 					verif = -1;
 		free(line);
 	}
-	return (ft_fonction_fermeture_free(fd, line, verif));
+	return (ft_fonction_fermeture_free(fd, &line, verif));
 }
