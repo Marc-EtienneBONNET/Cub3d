@@ -19,7 +19,7 @@ void	ft_procedure_verif_para(int *conteur, char *line, char para)
 	x = 0;
 	while (line[x] == ' ')
 		x++;
-	if (line[x] == para)
+	if (line[x] == para && line[x + 1] == ' ')
 		*conteur += 1;
 }
 

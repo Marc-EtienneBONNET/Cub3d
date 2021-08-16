@@ -48,9 +48,7 @@ SRCS = ft_memset.c		\
 	   get_next_line.c  \
 	   	get_next_line_2.c  \
 	   get_next_line_utils.c  \
-
-
-SRCSB = ft_lstnew.c			\
+		ft_lstnew.c			\
 		ft_lstadd_front.c	\
 		ft_lstsize.c		\
 		ft_lstlast.c		\
@@ -64,9 +62,8 @@ NAME = libft.a
 
 OBJS = $(SRCS:.c=.o)
 
-OBJSB = $(OBJS) $(SRCSB:.c=.o)
 
-CC = gcc
+CC = clang
 
 CC_FLAGS = -c -Wall -Wextra -Werror
 
@@ -77,7 +74,7 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	rm -f $(OBJSB)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)

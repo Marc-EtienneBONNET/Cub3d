@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_ciel_terre_2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbonnet <webbonnet@gmail.com>              +#+  +:+       +#+        */
+/*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 16:28:29 by mbonnet           #+#    #+#             */
-/*   Updated: 2021/05/04 15:58:29 by mbonnet          ###   ########.fr       */
+/*   Updated: 2021/08/16 17:26:04 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,14 @@ void	ft_protocole_recup(char *line, int *x, int *rgb)
 void	ft_protocole_compte_nb(char *line, int *conteur, char para)
 {
 	int	x;
+	int conteur2;
 
 	x = 0;
 	while (line[x] == ' ')
 		x++;
 	if (line[x] == para)
 	{
+		conteur2 = 0;
 		x++;
 		while (line[x] != '\0')
 		{
@@ -51,10 +53,13 @@ void	ft_protocole_compte_nb(char *line, int *conteur, char para)
 				while ((line[x] >= '0' && line[x] <= '9') || line[x] == ' ')
 					x++;
 			}
-			if (*conteur == 3 && line[x] != '\0')
+			if (*conteur == 3 && (line[x] != '\0' || conteur2 != 2))
 				*conteur = -1;
 			if (line[x] == ',')
+			{
+				conteur2++;
 				x++;
+			}
 		}
 	}
 }
