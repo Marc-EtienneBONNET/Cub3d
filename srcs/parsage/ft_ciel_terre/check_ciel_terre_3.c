@@ -6,7 +6,7 @@
 /*   By: mbonnet <mbonnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 16:28:29 by mbonnet           #+#    #+#             */
-/*   Updated: 2021/08/16 18:05:14 by mbonnet          ###   ########.fr       */
+/*   Updated: 2021/08/16 18:04:33 by mbonnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	ft_protocole_compte_virgule(char *line)
 	int	conteur;
 
 	conteur = 0;
-	x = 0;
 	while (line[x] != '\0')
 	{
 		if (line[x] == ',')
