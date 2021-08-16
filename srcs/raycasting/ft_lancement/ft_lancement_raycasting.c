@@ -12,7 +12,7 @@
 
 #include "../../../includes/cub3d.h"
 
-int	ft_stop_focus(t_parsage *pars)
+int ft_stop_focus(t_parsage *pars)
 {
 	pars->mouv.cam_droite = 0;
 	pars->mouv.cam_gauche = 0;

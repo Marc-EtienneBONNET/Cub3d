@@ -50,31 +50,24 @@ int	ft_memorise_ciel_terre(t_parsage *pars, char *lien, char para, int choose)
 		pars->decor.c = res;
 	else
 		pars->decor.t = res;
-	return (ft_fonction_fermeture_free(fd, &line, res));
+	return (ft_fonction_fermeture_free(fd, line, res));
 }
 
 int	ft_protocole_verif_format(char *line, int *x)
 {
 	int	y;
 
-	if (line[*x] == '\0')
-		return (-1);
 	(*x)++;
-	if (line[*x] == '\0')
-		return (-1);
 	y = 0;
 	while (y < 3)
 	{
-		if (line[*x] == '\0')
-			return (-1);
 		while (line[*x] == ' ')
 			(*x)++;
 		if (line[*x] < '0' || line[*x] > '9')
 			return (-1);
 		while (line[*x] == ' ' || (line[*x] >= '0' && line[*x] <= '9'))
 			(*x)++;
-		if ((line[*x] != ',' && line[*x] != '\0')
-			|| (y != 2 && line[*x] == '\0'))
+		if (line[*x] != ',' && line[*x] != '\0')
 			return (-1);
 		(*x)++;
 		y++;
@@ -91,17 +84,20 @@ int	ft_verif_format(char *lien, char para)
 
 	line = NULL;
 	fd = open(lien, O_RDONLY, S_IRUSR);
-	y = 0;
 	while (get_next_line(fd, &line) > 0)
 	{
 		x = 0;
+		y = 0;
 		while (line[x] == ' ')
 			x++;
 		if (line[x] == para)
 			y = ft_protocole_verif_format(line, &x);
-		free(line);
+		if (y < 0)
+			return (ft_fonction_fermeture_free(fd, line, -1));
+		else
+			free(line);
 	}
-	return (ft_fonction_fermeture_free(fd, &line, y));
+	return (ft_fonction_fermeture_free(fd, line, 1));
 }
 
 int	ft_init_recup_ciel_terre(t_parsage *pars, char *lien)

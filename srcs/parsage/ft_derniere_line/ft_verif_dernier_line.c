@@ -42,16 +42,6 @@ int	ft_verif_line(char *line, char *str)
 	return (1);
 }
 
-void	ft_verif_dernier_line_info_cub_2(char *line, int fd, int *x)
-{
-	while (*x > 0 && (ft_verif_line(line, "012 NSEW") == 1
-			|| ft_verif_line(line, "012 NSEW") == 2))
-	{
-		free(line);
-		*x = get_next_line(fd, &line);
-	}
-}
-
 int	ft_verif_dernier_line_info_cub(char *lien)
 {
 	int		fd;
@@ -62,17 +52,18 @@ int	ft_verif_dernier_line_info_cub(char *lien)
 	line = NULL;
 	fd = open(lien, O_RDONLY, S_IRUSR);
 	x = get_next_line(fd, &line);
-	test = 1;
-	while (x > 0)
+	test = ft_verif_line(line, "012NSEW ");
+	while (x > 0 && (test == -1 || test == 2))
 	{
 		free(line);
 		x = get_next_line(fd, &line);
-		if (ft_verif_line(line, "012 NSEW") == 1)
-		{
-			ft_verif_line_info_cub_2(line, fd, &x);
-			if (x != 0)
-				test = -1;
-		}
 	}
-	return (ft_fonction_fermeture_free(fd, &line, test));
+	while (ft_verif_line(line, "012NSEW ") == 1)
+	{
+		free(line);
+		x = get_next_line(fd, &line);
+	}
+	if (ft_verif_line(line, "    ") == -1)
+		return (ft_fonction_fermeture_free(fd, line, -1));
+	return (ft_fonction_fermeture_free(fd, line, 1));
 }

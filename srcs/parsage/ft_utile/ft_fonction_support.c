@@ -65,9 +65,9 @@ int	ft_verif_nb_para(char *lien, char para)
 	return (1);
 }
 
-int	ft_fonction_fermeture_free(int fd, char **line, int retour)
+int	ft_fonction_fermeture_free(int fd, char *line, int retour)
 {
 	close(fd);
-	free(*line);
+	free(line);
 	return (retour);
 }

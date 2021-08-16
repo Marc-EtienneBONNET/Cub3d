@@ -98,5 +98,5 @@ int	ft_memorise_texture(t_parsage *pars, char *lien)
 				res = -1;
 		free(line);
 	}
-	return (ft_fonction_fermeture_free(fd, &line, res));
+	return (ft_fonction_fermeture_free(fd, line, res));
 }

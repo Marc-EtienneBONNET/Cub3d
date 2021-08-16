@@ -277,7 +277,7 @@ int			ft_choose_texture(t_parsage *pars, char *line);
 int			ft_memorise_texture(t_parsage *pars, char *lien);
 void		ft_procedure_verif_para(int *conteur, char *line, char para);
 int			ft_verif_nb_para(char *lien, char para);
-int			ft_fonction_fermeture_free(int fd, char **line, int retour);
+int			ft_fonction_fermeture_free(int fd, char *line, int retour);
 int			ft_clik(int key, t_parsage *pars);
 int			ft_de_clik(int key, t_parsage *pars);
 int			protocole_draw(t_parsage *pars);

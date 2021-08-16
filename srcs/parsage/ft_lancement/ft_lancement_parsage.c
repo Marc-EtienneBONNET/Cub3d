@@ -49,7 +49,7 @@ int	ft_erreur(char *erreur, int x)
 
 int	ft_lance_parsage(t_parsage *pars, char *lien)
 {
-	if (ft_init_recup_reso(pars, lien) < 0)
+	if (ft_init_recup_reso(pars, lien) < 0) 
 		return (ft_erreur("procédure ft_init_recup_reso)\n\n", -1));
 	if (ft_init_recup_ciel_terre(pars, lien) < 0)
 		return (ft_erreur(": (procédure ft_init_recup_ciel_terre)\n\n", -1));
