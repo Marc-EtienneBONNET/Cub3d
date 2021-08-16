@@ -58,10 +58,10 @@ int	ft_protocole_verif_format(char *line, int *x)
 	int	y;
 
 	if (line[*x] == '\0')
-			return (-1);
+		return (-1);
 	(*x)++;
 	if (line[*x] == '\0')
-			return (-1);
+		return (-1);
 	y = 0;
 	while (y < 3)
 	{
@@ -73,7 +73,8 @@ int	ft_protocole_verif_format(char *line, int *x)
 			return (-1);
 		while (line[*x] == ' ' || (line[*x] >= '0' && line[*x] <= '9'))
 			(*x)++;
-		if ((line[*x] != ',' && line[*x] != '\0') || (y != 2 && line[*x] == '\0'))
+		if ((line[*x] != ',' && line[*x] != '\0')
+			|| (y != 2 && line[*x] == '\0'))
 			return (-1);
 		(*x)++;
 		y++;
@@ -103,7 +104,7 @@ int	ft_verif_format(char *lien, char para)
 	return (ft_fonction_fermeture_free(fd, &line, y));
 }
 
-int	ft_init_recup_ciel_terre(t_parsage *pars, char *lien) 
+int	ft_init_recup_ciel_terre(t_parsage *pars, char *lien)
 {
 	if (ft_verif_nb_para(lien, 'C') < 0 || ft_verif_nb_para(lien, 'F') < 0)
 		return (-1);
