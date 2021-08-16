@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/cub3d.h"
+#include "cub3d.h"
 
 int	ft_protocole_recup_ciel_terre(char *line, char para, int *res)
 {

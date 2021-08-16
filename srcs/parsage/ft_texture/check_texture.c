@@ -10,33 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/cub3d.h"
-
-int	ft_verif_nb_para_texture(char *lien, char *para)
-{
-	int		fd;
-	char	*line;
-	int		x;
-	int		conteur;
-
-	conteur = 0;
-	line = NULL;
-	fd = open(lien, O_RDONLY, S_IRUSR);
-	while (get_next_line(fd, &line) > 0)
-	{
-		x = 0;
-		while (line[x] == ' ')
-			x++;
-		if ((line[x] == para[0] && line[x + 1] == para[1] && !(para[2]))
-			|| (para[2] && line[x] == para[0] && line[x + 1] == para[1]
-				&& line[x + 2] == para[2]))
-			conteur++;
-		free(line);
-	}
-	if (conteur != 1)
-		return (ft_fonction_fermeture_free(fd, line, -1));
-	return (ft_fonction_fermeture_free(fd, line, 1));
-}
+#include "cub3d.h"
 
 void	ft_protocole_verif_format_1(char *line, int *x, int *verif)
 {
@@ -71,17 +45,18 @@ int	ft_verif_format_texture(char *lien, char *para)
 
 int	ft_verif_acce_texture(char *line)
 {
-	int fd;
-	int index;
-	
+	int	fd;
+	int	index;
+
 	index = ft_check_string(line, "texture");
-	if ( -1 == (fd = open(&(line[index]), O_RDONLY, S_IRUSR)))
+	fd = open(&(line[index]), O_RDONLY, S_IRUSR);
+	if (-1 == fd)
 		return (-1);
 	close(fd);
 	return (1);
 }
 
-int		ft_check_lisibiliter_over_texture(char *lien)
+int	ft_check_lisibiliter_over_texture(char *lien)
 {
 	int		fd;
 	char	*line;
@@ -97,17 +72,16 @@ int		ft_check_lisibiliter_over_texture(char *lien)
 		while (line[x] == ' ')
 			x++;
 		if (((line[x] == 'N' && line[x + 1] == 'O' && line[x + 2] == ' ')
-			|| (line[x] == 'S' && line[x + 1] == 'O' && line[x + 2] == ' ')
-			|| (line[x] == 'E' && line[x + 1] == 'A' && line[x + 2] == ' ')
-			|| (line[x] == 'W' && line[x + 1] == 'E' && line[x + 2] == ' ')
-			|| (line[x] == 'S' && line[x + 1] == ' ')) && res > 0)
+				|| (line[x] == 'S' && line[x + 1] == 'O' && line[x + 2] == ' ')
+				|| (line[x] == 'E' && line[x + 1] == 'A' && line[x + 2] == ' ')
+				|| (line[x] == 'W' && line[x + 1] == 'E' && line[x + 2] == ' ')
+				|| (line[x] == 'S' && line[x + 1] == ' ')) && res > 0)
 			if (ft_verif_acce_texture(&(line[x])) < 0)
 				res = -1;
 		free(line);
 	}
 	return (ft_fonction_fermeture_free(fd, line, res));
 }
-
 
 int	ft_init_verif_texture(char *lien)
 {

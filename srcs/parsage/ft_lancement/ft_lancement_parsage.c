@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/cub3d.h"
+#include "cub3d.h"
 
 int	ft_verif_lien_info_cub(char *lien, t_parsage *pars)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/cub3d.h"
+#include "cub3d.h"
 
 void	ft_procedure_verif_para(int *conteur, char *line, char para)
 {
@@ -72,15 +72,15 @@ int	ft_fonction_fermeture_free(int fd, char *line, int retour)
 	return (retour);
 }
 
-int ft_check_string(char *line, char *test)
+int	ft_check_string(char *line, char *test)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	while (!(line[x] == test[0] && line[x + 1] == test[1]
-	&& line[x + 2] == test[2] && line[x + 3] == test[3]
-	&& line[x + 4] == test[4] && line[x + 5] == test[5]
-	&& line[x + 6] == test[6]))
+			&& line[x + 2] == test[2] && line[x + 3] == test[3]
+			&& line[x + 4] == test[4] && line[x + 5] == test[5]
+			&& line[x + 6] == test[6]))
 		x++;
 	return (x);
 }

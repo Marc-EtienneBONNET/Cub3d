@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/cub3d.h"
+#include "cub3d.h"
 
 void	ft_init_d_perso(t_vecteur perso, t_vecteur *d_perso, float ray)
 {

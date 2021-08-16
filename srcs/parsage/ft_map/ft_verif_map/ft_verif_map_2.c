@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../../includes/cub3d.h"
+#include "cub3d.h"
 
 int	ft_bloker(int y, int x, t_parsage *pars)
 {

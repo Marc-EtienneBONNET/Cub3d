@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cub3d.h"
+#include "cub3d.h"
 
 int	ft_mouv_raycasting_bmp(t_parsage *pars, t_search_cub *search)
 {

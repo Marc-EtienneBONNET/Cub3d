@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/cub3d.h"
+#include "cub3d.h"
 
 int	ft_init_copie(t_parsage *pars, char *line, int *w, int taille)
 {

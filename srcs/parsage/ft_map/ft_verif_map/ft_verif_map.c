@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../../includes/cub3d.h"
+#include "cub3d.h"
 
 int	ft_remplie_valeur(t_parsage *pars, t_tmp *test, int option, t_tmp2 *a)
 {

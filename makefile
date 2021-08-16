@@ -33,6 +33,7 @@ SRCS			= 	main/ft_main.c\
 				parsage/ft_obj/ft_init_obj.c\
 				parsage/ft_ray/ft_init_ray.c\
 				parsage/ft_reso/check_reso.c\
+				parsage/ft_texture/check_texture_2.c\
 				parsage/ft_texture/check_texture.c\
 				parsage/ft_texture/ft_memorise_texture.c\
 				parsage/ft_utile/ft_fonction_support.c\

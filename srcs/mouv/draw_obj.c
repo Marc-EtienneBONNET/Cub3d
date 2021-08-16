@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cub3d.h"
+#include "cub3d.h"
 
 int	ft_mlx_pixel_get_2(t_tex texture, int x, int y, t_parsage pars)
 {
