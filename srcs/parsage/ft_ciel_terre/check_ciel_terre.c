@@ -83,21 +83,22 @@ int	ft_verif_format(char *lien, char para)
 	int		y;
 
 	line = NULL;
+	y = 1;
 	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
-		x = 0;
-		y = 0;
-		while (line[x] == ' ')
-			x++;
-		if (line[x] == para)
-			y = ft_protocole_verif_format(line, &x);
-		if (y < 0)
-			return (ft_fonction_fermeture_free(fd, line, -1));
-		else
-			free(line);
+		if (y > 0)
+		{
+			x = 0;
+			y = 0;
+			while (line[x] == ' ')
+				x++;
+			if (line[x] == para)
+				y = ft_protocole_verif_format(line, &x);
+		}
+		free(line);
 	}
-	return (ft_fonction_fermeture_free(fd, line, 1));
+	return (ft_fonction_fermeture_free(fd, line, y));
 }
 
 int	ft_init_recup_ciel_terre(t_parsage *pars, char *lien)

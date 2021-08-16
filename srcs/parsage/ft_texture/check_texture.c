@@ -69,6 +69,46 @@ int	ft_verif_format_texture(char *lien, char *para)
 	return (ft_fonction_fermeture_free(fd, line, verif));
 }
 
+int	ft_verif_acce_texture(char *line)
+{
+	int fd;
+	int index;
+	
+	index = ft_check_string(line, "texture");
+	if ( -1 == (fd = open(&(line[index]), O_RDONLY, S_IRUSR)))
+		return (-1);
+	close(fd);
+	return (1);
+}
+
+int		ft_check_lisibiliter_over_texture(char *lien)
+{
+	int		fd;
+	char	*line;
+	int		res;
+	int		x;
+
+	res = 1;
+	line = NULL;
+	fd = open(lien, O_RDONLY, S_IRUSR);
+	while (get_next_line(fd, &line) > 0)
+	{
+		x = 0;
+		while (line[x] == ' ')
+			x++;
+		if (((line[x] == 'N' && line[x + 1] == 'O' && line[x + 2] == ' ')
+			|| (line[x] == 'S' && line[x + 1] == 'O' && line[x + 2] == ' ')
+			|| (line[x] == 'E' && line[x + 1] == 'A' && line[x + 2] == ' ')
+			|| (line[x] == 'W' && line[x + 1] == 'E' && line[x + 2] == ' ')
+			|| (line[x] == 'S' && line[x + 1] == ' ')) && res > 0)
+			if (ft_verif_acce_texture(&(line[x])) < 0)
+				res = -1;
+		free(line);
+	}
+	return (ft_fonction_fermeture_free(fd, line, res));
+}
+
+
 int	ft_init_verif_texture(char *lien)
 {
 	if (ft_verif_nb_para_texture(lien, "NO ") < 0
@@ -82,6 +122,8 @@ int	ft_init_verif_texture(char *lien)
 		||ft_verif_format_texture(lien, "EA ") < 0
 		||ft_verif_format_texture(lien, "WE ") < 0
 		||ft_verif_format_texture(lien, "S ") < 0)
+		return (-1);
+	if (ft_check_lisibiliter_over_texture(lien) == -1)
 		return (-1);
 	return (1);
 }

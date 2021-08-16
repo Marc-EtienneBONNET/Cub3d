@@ -33,8 +33,7 @@ void	ft_init_mlx(t_parsage *pars)
 	mlx_put_image_to_window(pars->mlx.mlx, pars->mlx.window,
 		pars->mlx.img.struct_img, 0, 0);
 }
-
-int	ft_init_texture(char *line, t_parsage *pars, int index)
+int	ft_init_texture(char *line, t_parsage *pars, int index) 
 {
 	while (*line != '.' && *(line + 1) != '/' && *line != '\0')
 		line++;
@@ -82,6 +81,7 @@ int	ft_memorise_texture(t_parsage *pars, char *lien)
 
 	res = 4;
 	line = NULL;
+	
 	fd = open(lien, O_RDONLY, S_IRUSR);
 	ft_init_mlx(pars);
 	while (get_next_line(fd, &line) > 0)
@@ -89,11 +89,11 @@ int	ft_memorise_texture(t_parsage *pars, char *lien)
 		x = 0;
 		while (line[x] == ' ')
 			x++;
-		if ((line[x] == 'N' && line[x + 1] == 'O' && line[x + 2] == ' ')
+		if (((line[x] == 'N' && line[x + 1] == 'O' && line[x + 2] == ' ')
 			|| (line[x] == 'S' && line[x + 1] == 'O' && line[x + 2] == ' ')
 			|| (line[x] == 'E' && line[x + 1] == 'A' && line[x + 2] == ' ')
 			|| (line[x] == 'W' && line[x + 1] == 'E' && line[x + 2] == ' ')
-			|| (line[x] == 'S' && line[x + 1] == ' '))
+			|| (line[x] == 'S' && line[x + 1] == ' ')) && res > 0)
 			if (ft_choose_texture(pars, &(line[x])) < 0)
 				res = -1;
 		free(line);

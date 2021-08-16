@@ -46,22 +46,21 @@ int	ft_verif_nombre(char *lien)
 	int		fd;
 	char	*line;
 	int		conteur;
+	int		res;
 
+	res = 1;
 	conteur = 0;
 	line = NULL;
 	fd = open(lien, O_RDONLY, S_IRUSR);
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (ft_protocole_verif_nombre(line, &conteur) == -1)
-		{
-			free(line);
-			return (-1);
-		}
+			res = -1;
 		free(line);
 	}
 	if (conteur != 2)
-		return (ft_fonction_fermeture_free(fd, line, -1));
-	return (ft_fonction_fermeture_free(fd, line, 1));
+		res = -1;
+	return (ft_fonction_fermeture_free(fd, line, res));
 }
 
 void	ft_protocole_memorise(char *line, t_parsage *pars)

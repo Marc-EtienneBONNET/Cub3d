@@ -51,6 +51,8 @@ void	ft_protocole_compte_nb(char *line, int *conteur, char para)
 				while ((line[x] >= '0' && line[x] <= '9') || line[x] == ' ')
 					x++;
 			}
+			if (*conteur == 3 && line[x] != '\0')
+				*conteur = -1;
 			if (line[x] == ',')
 				x++;
 		}

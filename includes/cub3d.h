@@ -195,6 +195,7 @@ typedef struct s_header
 	t_img_header	img_header;
 }	t_header;
 
+int ft_check_string(char *line, char *test);
 int			bmp(t_parsage *pars, char *lien);
 int			get_correction_byte(int image_width);
 t_header	fill_bmp_header(t_reso img_res);
