@@ -24,11 +24,8 @@ II - Comment ai-je fait Cub3d ? 10 étapes
 	étape 10 : Les leaks
 III - Les trucs utiles que j'ai appris
 
-	Ce projet offre une excelante experience sur les difficulter qui englobe le graphisme des jeux des années 90. Bien qu aujourd hui, les technologie utiliser pour les jeux ne sont plus les meme,
-	on prend concience de la difficulter, et des nececiter comme celle de diminuer les besoin de calcule de sont propre programe.
-
-	De plus, il offre un sujet interressant qui pemer de pratiquer differente outil du C comme les structures.
-
-	il m as aussi offaire l occasion de pratiquer les malloc et free afin de perfectionner mas technique.
-
-	De plus, j ai pus voire et decouvrire les fonctionnaliter de la minilibX 
+	Ce projet offre une excellente expérience sur les difficultés qui englobe le graphisme des jeux des années 90.
+	Bien qu’aujourdhui, les technologies utilisées pour les jeux ne sont plus les mêmes, on prend conscience de la difficulté et des nécessités comme celle de diminuer les besoins de calcul de son propre programme.
+	De plus, il offre un sujet intéressant qui permet de pratiquer différents outils du C comme les structures.
+	Il m’a aussi offert l’occasion de pratiquer les Malloc et free again de perfectionner ma technique.
+	De plus, j’ai pu voir et découvrir les fonctionnalités de la minilibX.
