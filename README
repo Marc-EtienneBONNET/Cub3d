@@ -1,0 +1,34 @@
+
+I - Qu'est ce que Cub3d ?
+Le sujet
+
+	Ce projet est inspiré du jeu Wolfenstein 3D. Mondialement connu, Wolfenstein 3D est considéré comme le premier FPS (c'est à dire un jeu de tire à la première personne) jamais développé.
+
+	L'objectif est de faire une vue dynamique (qui s'adapte au cours du temps selon les mouvements du joueur)
+	et subjective (on voit du point de vue des yeux du personnage)
+	au sein d’un labyrinthe ayant une représentation graphique 3D "réalistique", dans lequel on doit trouver son chemin.
+	Ce projet permet d'explorer la technique du ray-casting. (Le lancer de rayons est une technique de rendu capable de créer une perspective tridimensionnelle à partir d'une carte bidimensionnelle).
+	Le sujet
+	Appréhender le projet
+II - Comment ai-je fait Cub3d ? 10 étapes
+
+	étape 1 : Parser le fichier .cub
+	étape 2 : Comprendre la minilibx et imprimer des carrés et des triangles
+	étape 3 : Créer la minimap pour apprendre à utiliser la Minilibx
+	étape 4 : Savoir récupérer les keys et les utiliser dans la minimap
+	étape 5 : Le raycasting sans textures dans la pratique
+	étape 6 : Ajouter les textures
+	étape 7 : Les Sprites
+	étape 8 : --save
+	étape 9 : Les derniers petits éléments
+	étape 10 : Les leaks
+III - Les trucs utiles que j'ai appris
+
+	Ce projet offre une excelante experience sur les difficulter qui englobe le graphisme des jeux des années 90. Bien qu aujourd hui, les technologie utiliser pour les jeux ne sont plus les meme,
+	on prend concience de la difficulter, et des nececiter comme celle de diminuer les besoin de calcule de sont propre programe.
+
+	De plus, il offre un sujet interressant qui pemer de pratiquer differente outil du C comme les structures.
+
+	il m as aussi offaire l occasion de pratiquer les malloc et free afin de perfectionner mas technique.
+
+	De plus, j ai pus voire et decouvrire les fonctionnaliter de la minilibX 
